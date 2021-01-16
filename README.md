@@ -1,24 +1,9 @@
 CMU 10-701: Facial Expression Recognition on https://www.kaggle.com/msambare/fer2013
 
-# Image transformation ensemble
-Files for this ensemble are contained in the "transform_ensemble" folder.
-Files named "model[x]_[name].py" contain the training code for the nine component models
-These files would train the networks and create .pt files containing the model
-The "transform_ensemble_test.py" file contains the code to import and test all models
-This file would open all of the selected .pt files containing the models and evaluate them on the test set as an ensemble
-Note: all code was developed in Google Colab, and cannot be executed without access to personal Google Drive folders and Kaggle accounts
+Facial expression recognition (FER) has been extensively studied given its importance in non-verbal communication. It has a wide range of applications such as pain detection in the medical field, drowsiness detection in driver safety, or facial action in the animation industry, among others. FER is a hard problem to solve given that in real world applications people have a variety of colors, skin textures, races, poses, etc. To tackle this problem, we created an algorithm that uses the FER2013 dataset to correctly label facial expressions from seven different emotions: happy, sad, angry, disgust, neutral, surprise, and fear. We trained nine identically-structured convolutional neural networks 
+(CNNs) with modified versions of the training dataset by adding different image transformations to each one, we then trained a wide standalone CNN, and a standalone 4-CNN using augmented data by adding to the training set cropped versions, horizontal flips, oversampling to twice the size and normalization to each image. The models were combined in a final ensemble as a weighted sum of the individual network outputs. Our final test accuracy was 67.7\%. This result outperformed a human performance baseline.
 
-# Wide standalone CNN
-Training code for this model is contained in the "wide_model.py"
-Note: all code was developed in Google Colab, and cannot be executed without access to personal Google Drive folders and Kaggle accounts
-
-# Weighted voting ensemble
-Evaluation code for this model is contained in "weighted_ensemble_test.py"
-This file assumes that the models have already been trained, and can be imported from .pt and .pkl files
-Note: all code was developed in Google Colab, and cannot be executed without access to personal Google Drive folders and Kaggle accounts
-
-
-# Multistep CNN and Standalone 4-Conv Layer CNN Implementation
+The link to the associated report is https://github.com/mzhao98/emotion_recognition/blob/main/written.pdf
 
 
 ## Requirements:
